@@ -2,6 +2,7 @@ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 
 export default function (eleventyConfig) {
+  const isProd = process.env.ELEVENTY_ENV === "production";
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(pluginRss);
 
@@ -29,7 +30,7 @@ export default function (eleventyConfig) {
   });
 
   return {
-    pathPrefix: "/website2/",
+    pathPrefix: isProd ? "/website2/" : "/",
     dir: {
       input: "src",
       output: "_site",

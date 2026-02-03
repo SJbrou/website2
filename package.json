@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "eleventy",
+    "build": "ELEVENTY_ENV=production eleventy",
     "serve": "eleventy --serve",
     "dev": "eleventy --serve"
   },
