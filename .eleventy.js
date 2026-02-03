@@ -29,6 +29,7 @@ export default function (eleventyConfig) {
   });
 
   return {
+    pathPrefix: "/website2/",
     dir: {
       input: "src",
       output: "_site",
