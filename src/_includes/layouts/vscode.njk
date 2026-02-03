@@ -1,0 +1,30 @@
+---
+layout: base.njk
+bodyClass: theme-vscode
+---
+<section class="app-window window-vscode">
+  <header class="window-bar">
+    <div class="window-dots">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+    </div>
+    <div class="window-title">{{ title or "Dev" }}</div>
+    <div class="window-meta">VS Code</div>
+  </header>
+  <div class="window-body">
+    <div class="vscode-shell">
+      <aside class="vscode-sidebar">
+        <div class="sidebar-title">Explorer</div>
+        <ul class="sidebar-list">
+          <li>dev</li>
+          <li>projects</li>
+          <li>notes</li>
+        </ul>
+      </aside>
+      <div class="vscode-editor">
+        {{ content | safe }}
+      </div>
+    </div>
+  </div>
+</section>

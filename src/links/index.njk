@@ -1,0 +1,27 @@
+---
+layout: hn.njk
+title: "Links"
+---
+<ul class="hn-items">
+  {% for post in collections.links %}
+  <li class="hn-item">
+    <div class="hn-rank">{{ loop.index }}.</div>
+    <div class="hn-content">
+      <a class="hn-link" href="{{ post.data.link }}">{{ post.data.title }}</a>
+      <div class="hn-sub">
+        <span>{{ post.date | readableDate }}</span>
+        {% if post.data.tags %}
+        <span class="hn-tags">
+          {% for tag in post.data.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </span>
+        {% endif %}
+      </div>
+      {% if post.data.summary %}
+      <div class="hn-summary">{{ post.data.summary }}</div>
+      {% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>SJB Personal Site - Dev</title>
+    <link>https://sjbrou.github.io/website2/dev/</link>
+    <description>Dev posts</description>
+    
+    <item>
+      <title>Hello from Dev</title>
+      <link>https://sjbrou.github.io/website2/dev/hello-world/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 GMT</pubDate>
+      <guid>https://sjbrou.github.io/website2/dev/hello-world/</guid>
+    </item>
+    
+  </channel>
+</rss>

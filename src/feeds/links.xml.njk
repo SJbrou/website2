@@ -1,0 +1,20 @@
+---
+permalink: "/feeds/links.xml"
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ site.title }} - Links</title>
+    <link>{{ site.url }}/links/</link>
+    <description>Links feed</description>
+    {% for post in collections.links %}
+    <item>
+      <title>{{ post.data.title }}</title>
+      <link>{{ post.data.link }}</link>
+      <pubDate>{{ post.date.toUTCString() }}</pubDate>
+      <guid>{{ site.url }}{{ post.url }}</guid>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

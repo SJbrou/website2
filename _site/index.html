@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <meta name="description" content="A multi-window personal site with dev, about, and links sections." />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dev Feed" href="/feeds/dev.xml" />
+    <link rel="alternate" type="application/rss+xml" title="About Feed" href="/feeds/about.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Links Feed" href="/feeds/links.xml" />
+  </head>
+  <body class="">
+    <header class="site-header">
+      <div class="site-title">SJB Personal Site</div>
+      <nav class="site-nav">
+        <a href="/">Home</a>
+        <a href="/dev/">Dev</a>
+        <a href="/about/">About</a>
+        <a href="/links/">Links</a>
+      </nav>
+    </header>
+    <main class="site-main">
+      <section class="window-grid">
+  <div class="app-window window-card" style="--accent: #4fc3f7;">
+    <header class="window-bar">
+      <div class="window-dots">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <div class="window-title">Dev</div>
+      <div class="window-meta">VS Code</div>
+    </header>
+    <div class="window-body">
+      <p>Projects, notes, and experiments.</p>
+      <a class="window-link" href="/dev/">Open Dev</a>
+    </div>
+  </div>
+
+  <div class="app-window window-card" style="--accent: #bda27e;">
+    <header class="window-bar">
+      <div class="window-dots">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <div class="window-title">About</div>
+      <div class="window-meta">Wikipedia</div>
+    </header>
+    <div class="window-body">
+      <p>Bio, timeline, and more context.</p>
+      <a class="window-link" href="/about/">Open About</a>
+    </div>
+  </div>
+
+  <div class="app-window window-card" style="--accent: #ff7e3d;">
+    <header class="window-bar">
+      <div class="window-dots">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <div class="window-title">Links</div>
+      <div class="window-meta">Hacker News</div>
+    </header>
+    <div class="window-body">
+      <p>Curated links with short notes.</p>
+      <a class="window-link" href="/links/">Open Links</a>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer class="site-footer">
+      <span>Built with Eleventy. Hosted on GitHub Pages.</span>
+    </footer>
+  </body>
+</html>

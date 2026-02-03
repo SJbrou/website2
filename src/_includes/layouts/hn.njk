@@ -1,0 +1,27 @@
+---
+layout: base.njk
+bodyClass: theme-hn
+---
+<section class="app-window window-hn">
+  <header class="window-bar">
+    <div class="window-dots">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+    </div>
+    <div class="window-title">{{ title or "Links" }}</div>
+    <div class="window-meta">Hacker News</div>
+  </header>
+  <div class="window-body">
+    <div class="hn-shell">
+      <div class="hn-header">
+        <span class="hn-logo">Y</span>
+        <span class="hn-title">Hacker News</span>
+        <span class="hn-subtitle">personal links</span>
+      </div>
+      <div class="hn-list">
+        {{ content | safe }}
+      </div>
+    </div>
+  </div>
+</section>

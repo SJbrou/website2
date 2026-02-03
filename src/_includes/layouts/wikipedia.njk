@@ -1,0 +1,31 @@
+---
+layout: base.njk
+bodyClass: theme-wikipedia
+---
+<section class="app-window window-wikipedia">
+  <header class="window-bar">
+    <div class="window-dots">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+    </div>
+    <div class="window-title">{{ title or "About" }}</div>
+    <div class="window-meta">Wikipedia</div>
+  </header>
+  <div class="window-body">
+    <div class="wiki-shell">
+      <aside class="wiki-sidebar">
+        <div class="wiki-logo">W</div>
+        <nav class="wiki-nav">
+          <a href="#summary">Summary</a>
+          <a href="#background">Background</a>
+          <a href="#interests">Interests</a>
+          <a href="#timeline">Timeline</a>
+        </nav>
+      </aside>
+      <article class="wiki-article">
+        {{ content | safe }}
+      </article>
+    </div>
+  </div>
+</section>

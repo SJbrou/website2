@@ -1,0 +1,22 @@
+---
+layout: vscode.njk
+title: "Dev"
+---
+<h1 class="vscode-title">Dev Feed</h1>
+<p class="vscode-subtitle">Notes, builds, and experiments.</p>
+
+<ul class="post-list">
+  {% for post in collections.dev %}
+  <li>
+    <a href="{{ post.url }}">{{ post.data.title }}</a>
+    <span class="post-meta">{{ post.date | readableDate }}</span>
+    {% if post.data.tags %}
+    <span class="post-tags">
+      {% for tag in post.data.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </span>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>

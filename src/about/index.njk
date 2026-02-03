@@ -1,0 +1,31 @@
+---
+layout: wikipedia.njk
+title: "About"
+---
+<h1 id="summary">Stan (person)</h1>
+<p class="wiki-subtitle">From Wikipedia, the free encyclopedia (parody)</p>
+
+<section>
+  <h2 id="background">Background</h2>
+  <p>This is your short bio. Swap this for a real intro.</p>
+</section>
+
+<section>
+  <h2 id="interests">Interests</h2>
+  <ul class="wiki-list">
+    <li>Product building</li>
+    <li>Web craft</li>
+    <li>Music and visuals</li>
+  </ul>
+</section>
+
+<section>
+  <h2 id="timeline">Timeline</h2>
+  <ul class="wiki-list">
+    {% for post in collections.about %}
+    <li>
+      <strong>{{ post.data.title }}</strong> — {{ post.date | readableDate }}
+    </li>
+    {% endfor %}
+  </ul>
+</section>

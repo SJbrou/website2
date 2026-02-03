@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title or site.title }}</title>
+    <meta name="description" content="{{ description or site.description }}" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <link rel="alternate" type="application/rss+xml" title="Dev Feed" href="/feeds/dev.xml" />
+    <link rel="alternate" type="application/rss+xml" title="About Feed" href="/feeds/about.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Links Feed" href="/feeds/links.xml" />
+  </head>
+  <body class="{{ bodyClass or '' }}">
+    <header class="site-header">
+      <div class="site-title">{{ site.title }}</div>
+      <nav class="site-nav">
+        <a href="/">Home</a>
+        <a href="/dev/">Dev</a>
+        <a href="/about/">About</a>
+        <a href="/links/">Links</a>
+      </nav>
+    </header>
+    <main class="site-main">
+      {{ content | safe }}
+    </main>
+    <footer class="site-footer">
+      <span>Built with Eleventy. Hosted on GitHub Pages.</span>
+    </footer>
+  </body>
+</html>
