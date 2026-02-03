@@ -2,14 +2,14 @@
 <rss version="2.0">
   <channel>
     <title>SJB Personal Site - Links</title>
-    <link>https://sjbrou.github.io/website2/links/</link>
+    <link>https://sjbrou.github.io/website2//links/</link>
     <description>Links feed</description>
     
     <item>
       <title>While for Loop</title>
       <link>https://www.whileforloop.com/en/</link>
       <pubDate>Mon, 02 Feb 2026 00:00:00 GMT</pubDate>
-      <guid>https://sjbrou.github.io/website2/links/hn-starter/</guid>
+      <guid>https://sjbrou.github.io/website2//links/hn-starter/</guid>
     </item>
     
   </channel>
