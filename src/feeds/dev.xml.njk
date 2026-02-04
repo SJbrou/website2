@@ -11,9 +11,9 @@ layout: null
     {% for post in collections.dev %}
     <item>
       <title>{{ post.data.title }}</title>
-      <link>{{ site.url }}{{ post.url }}</link>
+      <link>{{ site.url }}{{ post.url | absoluteUrl }}</link>
       <pubDate>{{ post.date.toUTCString() }}</pubDate>
-      <guid>{{ site.url }}{{ post.url }}</guid>
+      <guid>{{ site.url }}{{ post.url | absoluteUrl }}</guid>
     </item>
     {% endfor %}
   </channel>

@@ -7,13 +7,13 @@ layout: null
   <channel>
     <title>{{ site.title }} - Links</title>
     <link>{{ site.url }}/links/</link>
-    <description>Links feed</description>
+    <description>Links posts</description>
     {% for post in collections.links %}
     <item>
       <title>{{ post.data.title }}</title>
-      <link>{{ post.data.link }}</link>
+      <link>{{ site.url }}{{ post.url | replace("/", "", 1) }}</link>
       <pubDate>{{ post.date.toUTCString() }}</pubDate>
-      <guid>{{ site.url }}{{ post.url }}</guid>
+      <guid>{{ site.url }}{{ post.url | replace("/", "", 1) }}</guid>
     </item>
     {% endfor %}
   </channel>

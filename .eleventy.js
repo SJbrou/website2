@@ -1,9 +1,9 @@
-import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 
 export default function (eleventyConfig) {
   const isProd = process.env.ELEVENTY_ENV === "production";
-  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  const pathPrefix = isProd ? "/website2" : "";
+
   eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
@@ -29,8 +29,24 @@ export default function (eleventyConfig) {
     }).format(date);
   });
 
+  eleventyConfig.addFilter("absoluteUrl", (url) => {
+    if (url.startsWith("/")) {
+      return url.slice(1);
+    }
+    return url;
+  });
+
+  // Add a proper url filter that respects pathPrefix
+  eleventyConfig.addNunjucksGlobal("pathPrefix", pathPrefix);
+  eleventyConfig.addFilter("url", function(url) {
+    if (!url) return url;
+    if (url === "/") return pathPrefix + "/";
+    // Remove leading slash if present, then add pathPrefix
+    const cleanUrl = url.startsWith("/") ? url.slice(1) : url;
+    return pathPrefix + "/" + cleanUrl;
+  });
+
   return {
-    pathPrefix: isProd ? "/website2/" : "/",
     dir: {
       input: "src",
       output: "_site",
