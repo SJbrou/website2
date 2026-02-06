@@ -40,7 +40,12 @@
         </nav>
       </aside>
       <article class="wiki-article">
-        <p>Short biography entry. Replace with real details.</p>
+        <h2>Early Life</h2>
+<p>Born in the 1990s, this was a transformative decade marked by significant technological and cultural changes. The digital revolution was beginning to take shape with the widespread adoption of personal computers and the birth of the World Wide Web.</p>
+<h2>Cultural Context</h2>
+<p>The 90s were characterized by distinctive fashion trends, the rise of alternative music, and the beginning of the internet age. Growing up during this time meant experiencing the transition from analog to digital media.</p>
+<h2>Impact</h2>
+<p>Being born in this decade means being part of a generation that grew up with technology evolving rapidly, shaping a unique perspective on both the pre-digital and digital worlds.</p>
 
       </article>
     </div>
@@ -54,13 +59,17 @@
     if (!article || !toc) return;
     
     const headings = article.querySelectorAll('h2');
-    headings.forEach((heading) => {
-      if (heading.id) {
-        const link = document.createElement('a');
-        link.href = '#' + heading.id;
-        link.textContent = heading.textContent;
-        toc.appendChild(link);
+    headings.forEach((heading, index) => {
+      // Generate ID if it doesn't exist
+      if (!heading.id) {
+        const text = heading.textContent.trim();
+        heading.id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
       }
+      
+      const link = document.createElement('a');
+      link.href = '#' + heading.id;
+      link.textContent = heading.textContent;
+      toc.appendChild(link);
     });
   })();
 </script>

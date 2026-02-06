@@ -108,13 +108,17 @@
     if (!article || !toc) return;
     
     const headings = article.querySelectorAll('h2');
-    headings.forEach((heading) => {
-      if (heading.id) {
-        const link = document.createElement('a');
-        link.href = '#' + heading.id;
-        link.textContent = heading.textContent;
-        toc.appendChild(link);
+    headings.forEach((heading, index) => {
+      // Generate ID if it doesn't exist
+      if (!heading.id) {
+        const text = heading.textContent.trim();
+        heading.id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
       }
+      
+      const link = document.createElement('a');
+      link.href = '#' + heading.id;
+      link.textContent = heading.textContent;
+      toc.appendChild(link);
     });
   })();
 </script>
