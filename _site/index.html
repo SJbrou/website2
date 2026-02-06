@@ -12,7 +12,6 @@
   </head>
   <body class="">
     <header class="site-header">
-      <div class="site-title">SJB Personal Site</div>
       <nav class="site-nav">
         <a href="/">Home</a>
         <a href="/dev/">Dev</a>
@@ -22,6 +21,7 @@
     </header>
     <main class="site-main">
       <section class="window-grid">
+  <!-- Dev Section Preview -->
   <div class="app-window window-card" style="--accent: #4fc3f7;">
     <header class="window-bar">
       <div class="window-dots">
@@ -32,12 +32,18 @@
       <div class="window-title">Dev</div>
       <div class="window-meta">VS Code</div>
     </header>
-    <div class="window-body">
-      <p>Projects, notes, and experiments.</p>
-      <a class="window-link" href="/dev/">Open Dev</a>
+    <div class="window-body window-preview">
+      <div class="preview-content">
+        <h3>Latest Dev Posts</h3>
+        <ul class="preview-list">
+          
+        </ul>
+      </div>
+      <a class="window-link" href="/dev/">Open Dev →</a>
     </div>
   </div>
 
+  <!-- About Section Preview -->
   <div class="app-window window-card" style="--accent: #bda27e;">
     <header class="window-bar">
       <div class="window-dots">
@@ -48,12 +54,21 @@
       <div class="window-title">About</div>
       <div class="window-meta">Wikipedia</div>
     </header>
-    <div class="window-body">
-      <p>Bio, timeline, and more context.</p>
-      <a class="window-link" href="/about/">Open About</a>
+    <div class="window-body window-preview">
+      <div class="preview-content">
+        <h3>Stan Brouwer</h3>
+        <p>Multi-disciplinary builder and designer focused on creating thoughtful digital experiences.</p>
+        <div class="preview-tags">
+          <span class="tag">Product</span>
+          <span class="tag">Design</span>
+          <span class="tag">Web</span>
+        </div>
+      </div>
+      <a class="window-link" href="/about/">Open About →</a>
     </div>
   </div>
 
+  <!-- Links Section Preview -->
   <div class="app-window window-card" style="--accent: #ff7e3d;">
     <header class="window-bar">
       <div class="window-dots">
@@ -64,9 +79,14 @@
       <div class="window-title">Links</div>
       <div class="window-meta">Hacker News</div>
     </header>
-    <div class="window-body">
-      <p>Curated links with short notes.</p>
-      <a class="window-link" href="/links/">Open Links</a>
+    <div class="window-body window-preview">
+      <div class="preview-content">
+        <h3>Curated Links</h3>
+        <ul class="preview-list">
+          
+        </ul>
+      </div>
+      <a class="window-link" href="/links/">Open Links →</a>
     </div>
   </div>
 </section>
@@ -75,5 +95,6 @@
     <footer class="site-footer">
       <span>Built with Eleventy. Hosted on GitHub Pages.</span>
     </footer>
+    <script src="/assets/js/window-controls.js"></script>
   </body>
 </html>

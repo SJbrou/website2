@@ -12,7 +12,6 @@
   </head>
   <body class="{{ bodyClass or '' }}">
     <header class="site-header">
-      <div class="site-title">{{ site.title }}</div>
       <nav class="site-nav">
         <a href="{{ '/' | url }}">Home</a>
         <a href="{{ '/dev/' | url }}">Dev</a>
@@ -26,5 +25,6 @@
     <footer class="site-footer">
       <span>Built with Eleventy. Hosted on GitHub Pages.</span>
     </footer>
+    <script src="{{ '/assets/js/window-controls.js' | url }}"></script>
   </body>
 </html>

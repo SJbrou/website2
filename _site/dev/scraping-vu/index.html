@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dev</title>
+    <title>Play with strudel</title>
     <meta name="description" content="A multi-window personal site with dev, about, and links sections." />
     <link rel="stylesheet" href="/assets/css/site.css" />
     <link rel="alternate" type="application/rss+xml" title="Dev Feed" href="/feeds/dev.xml" />
@@ -27,7 +27,7 @@
       <span class="dot dot-yellow"></span>
       <span class="dot dot-green"></span>
     </div>
-    <div class="window-title">Dev</div>
+    <div class="window-title">Play with strudel</div>
     <div class="window-meta">VS Code</div>
   </header>
   <div class="window-body">
@@ -47,90 +47,21 @@
         </ul>
       </aside>
       <div class="vscode-editor">
-        <h1 class="vscode-title">Dev Feed</h1>
-<p class="vscode-subtitle">Notes, builds, and experiments.</p>
-
-
-
-  
-  <div class="post-group">
-    <h2 class="post-group-title">Log</h2>
-    <ul class="post-list">
-      
-      <li>
-        <a href="/dev/hello-world/">Hello from Dev</a>
-        <span class="post-meta">Feb 01, 2026</span>
-        
-        <span class="post-tags">
-          
-          
-          
-          
-          <span class="tag">log</span>
-          
-          
-        </span>
-        
-      </li>
-      
-    </ul>
-  </div>
-  
-  <div class="post-group">
-    <h2 class="post-group-title">Music</h2>
-    <ul class="post-list">
-      
-      <li>
-        <a href="/dev/scraping-vu/">Play with strudel</a>
-        <span class="post-meta">Feb 01, 2026</span>
-        
-        <span class="post-tags">
-          
-          
-          <span class="tag">strudel</span>
-          
-          
-          
-          <span class="tag">music</span>
-          
-          
-          
-          
-        </span>
-        
-      </li>
-      
-    </ul>
-  </div>
-  
-  <div class="post-group">
-    <h2 class="post-group-title">Strudel</h2>
-    <ul class="post-list">
-      
-      <li>
-        <a href="/dev/scraping-vu/">Play with strudel</a>
-        <span class="post-meta">Feb 01, 2026</span>
-        
-        <span class="post-tags">
-          
-          
-          <span class="tag">strudel</span>
-          
-          
-          
-          <span class="tag">music</span>
-          
-          
-          
-          
-        </span>
-        
-      </li>
-      
-    </ul>
-  </div>
-  
-
+        <p>Inspired by <a href="https://www.youtube.com/@Switch-Angel">Switch Angel</a>, I've been playing arround with <a href="https://strudel-lang.org/">Strudel</a> and was impressed by how easy it is to create music in the browser.</p>
+<script src="https://unpkg.com/@strudel/embed@latest"></script>
+<strudel-repl>
+  <!--
+setCpm(10/4)
+$: note(`e e f g g f e d c c d e [e -] [- d] d@2
+         e e f g g f e d c c d e [d -] [- c] c@2
+         d d e c d [e f] e c d [e f] e d c d g2 [- e]
+         - e f g g f e d c c d e d [- c] c -
+         - - - - - - - - - - - - - - - - -
+`).sound("piano")._punchcard()
+-->
+</strudel-repl>
+<p>Inspiration:</p>
+<iframe width="50%" height="30%" src="https://www.youtube.com/embed/iu5rnQkfO6M" title="Coding Trance Music from Scratch (Again )" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
       </div>
     </div>

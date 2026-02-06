@@ -6,6 +6,13 @@
     <description>Dev posts</description>
     
     <item>
+      <title>Play with strudel</title>
+      <link>https://sjbrou.github.io/website2/dev/scraping-vu/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 GMT</pubDate>
+      <guid>https://sjbrou.github.io/website2/dev/scraping-vu/</guid>
+    </item>
+    
+    <item>
       <title>Hello from Dev</title>
       <link>https://sjbrou.github.io/website2/dev/hello-world/</link>
       <pubDate>Sun, 01 Feb 2026 00:00:00 GMT</pubDate>

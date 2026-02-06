@@ -12,6 +12,39 @@ export default function (eleventyConfig) {
     collectionApi.getFilteredByGlob("src/dev/**/*.md").reverse()
   );
 
+  eleventyConfig.addCollection("devByTag", (collectionApi) => {
+    const posts = collectionApi.getFilteredByGlob("src/dev/**/*.md");
+    const tagMap = {};
+    const allTags = new Set();
+
+    // Collect all tags and posts
+    posts.forEach(post => {
+      const tags = post.data.tags || [];
+      tags.forEach(tag => {
+        if (tag !== "dev") { // Exclude generic "dev" tag
+          allTags.add(tag);
+          if (!tagMap[tag]) {
+            tagMap[tag] = [];
+          }
+          tagMap[tag].push(post);
+        }
+      });
+    });
+
+    // Sort posts by date within each tag
+    Object.keys(tagMap).forEach(tag => {
+      tagMap[tag].sort((a, b) => new Date(b.date) - new Date(a.date));
+    });
+
+    // Return as array of {tag, posts} for easier iteration
+    return Array.from(allTags)
+      .sort()
+      .map(tag => ({
+        tag,
+        posts: tagMap[tag]
+      }));
+  });
+
   eleventyConfig.addCollection("about", (collectionApi) =>
     collectionApi.getFilteredByGlob("src/about/**/*.md").reverse()
   );
@@ -27,6 +60,11 @@ export default function (eleventyConfig) {
       month: "short",
       day: "2-digit",
     }).format(date);
+  });
+
+  eleventyConfig.addFilter("capitalize", (str) => {
+    if (!str) return str;
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
   });
 
   eleventyConfig.addFilter("absoluteUrl", (url) => {

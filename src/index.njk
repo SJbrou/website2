@@ -3,6 +3,7 @@ layout: base.njk
 title: "Home"
 ---
 <section class="window-grid">
+  <!-- Dev Section Preview -->
   <div class="app-window window-card" style="--accent: #4fc3f7;">
     <header class="window-bar">
       <div class="window-dots">
@@ -13,12 +14,23 @@ title: "Home"
       <div class="window-title">Dev</div>
       <div class="window-meta">VS Code</div>
     </header>
-    <div class="window-body">
-      <p>Projects, notes, and experiments.</p>
-      <a class="window-link" href="{{ '/dev/' | url }}">Open Dev</a>
+    <div class="window-body window-preview">
+      <div class="preview-content">
+        <h3>Latest Dev Posts</h3>
+        <ul class="preview-list">
+          {% for post in collections.dev | slice(0, 3) %}
+          <li>
+            <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+            <span class="preview-date">{{ post.date | readableDate }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <a class="window-link" href="{{ '/dev/' | url }}">Open Dev →</a>
     </div>
   </div>
 
+  <!-- About Section Preview -->
   <div class="app-window window-card" style="--accent: #bda27e;">
     <header class="window-bar">
       <div class="window-dots">
@@ -29,12 +41,21 @@ title: "Home"
       <div class="window-title">About</div>
       <div class="window-meta">Wikipedia</div>
     </header>
-    <div class="window-body">
-      <p>Bio, timeline, and more context.</p>
-      <a class="window-link" href="{{ '/about/' | url }}">Open About</a>
+    <div class="window-body window-preview">
+      <div class="preview-content">
+        <h3>Stan Brouwer</h3>
+        <p>Multi-disciplinary builder and designer focused on creating thoughtful digital experiences.</p>
+        <div class="preview-tags">
+          <span class="tag">Product</span>
+          <span class="tag">Design</span>
+          <span class="tag">Web</span>
+        </div>
+      </div>
+      <a class="window-link" href="{{ '/about/' | url }}">Open About →</a>
     </div>
   </div>
 
+  <!-- Links Section Preview -->
   <div class="app-window window-card" style="--accent: #ff7e3d;">
     <header class="window-bar">
       <div class="window-dots">
@@ -45,9 +66,19 @@ title: "Home"
       <div class="window-title">Links</div>
       <div class="window-meta">Hacker News</div>
     </header>
-    <div class="window-body">
-      <p>Curated links with short notes.</p>
-      <a class="window-link" href="{{ '/links/' | url }}">Open Links</a>
+    <div class="window-body window-preview">
+      <div class="preview-content">
+        <h3>Curated Links</h3>
+        <ul class="preview-list">
+          {% for post in collections.links | slice(0, 3) %}
+          <li>
+            <a href="{{ post.data.link }}" target="_blank" rel="noopener">{{ post.data.title }}</a>
+            <span class="preview-date">{{ post.date | readableDate }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <a class="window-link" href="{{ '/links/' | url }}">Open Links →</a>
     </div>
   </div>
 </section>
