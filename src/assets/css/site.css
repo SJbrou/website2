@@ -447,20 +447,49 @@ body.window-fullscreen .site-main {
 
 .wiki-shell {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
 }
 
 .wiki-sidebar {
-  display: none;
+  border-right: 1px solid #a2a9b1;
+  padding: 24px 16px;
+  background: #f8f9fa;
 }
 
 .wiki-logo {
-  display: none;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #202122;
+  margin-bottom: 24px;
+  font-family: "Georgia", serif;
 }
 
 .wiki-nav {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wiki-nav a {
+  color: #0645ad;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.wiki-nav a:hover {
+  background-color: #eaecf0;
+  text-decoration: underline;
+}
+
+.wiki-toc-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: #202122;
 }
 
 .wiki-article {
@@ -696,6 +725,22 @@ body.window-fullscreen .site-main {
   .vscode-shell,
   .wiki-shell {
     grid-template-columns: 1fr;
+  }
+
+  .wiki-sidebar {
+    border-right: none;
+    border-bottom: 1px solid #a2a9b1;
+    padding: 16px;
+  }
+
+  .wiki-logo {
+    display: none;
+  }
+
+  .wiki-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .app-window {
