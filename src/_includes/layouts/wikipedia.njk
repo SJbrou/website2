@@ -35,11 +35,26 @@ bodyClass: theme-wikipedia
     if (!article || !toc) return;
     
     const headings = article.querySelectorAll('h2');
+    const usedIds = new Set();
+    
     headings.forEach((heading, index) => {
       // Generate ID if it doesn't exist
       if (!heading.id) {
-        const text = heading.textContent.trim();
-        heading.id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+        const headingText = heading.textContent.trim();
+        let baseId = headingText.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+        
+        // Ensure uniqueness by appending index if needed
+        let finalId = baseId;
+        let counter = 1;
+        while (usedIds.has(finalId)) {
+          finalId = baseId + '-' + counter;
+          counter++;
+        }
+        
+        heading.id = finalId;
+        usedIds.add(finalId);
+      } else {
+        usedIds.add(heading.id);
       }
       
       const link = document.createElement('a');
