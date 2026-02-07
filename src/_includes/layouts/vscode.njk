@@ -16,18 +16,46 @@ bodyClass: theme-vscode
     <div class="vscode-shell">
       <aside class="vscode-sidebar">
         <div class="sidebar-title">Explorer</div>
-        <ul class="sidebar-list">
+        <div class="folder-tree">
           {% if collections.devByTag %}
             {% for tagGroup in collections.devByTag %}
-              <li>{{ tagGroup.tag | capitalize }}</li>
+              <details class="folder" open>
+                <summary class="folder-name">
+                  <span class="folder-icon">📁</span>
+                  <span>{{ tagGroup.tag | capitalize }}</span>
+                </summary>
+                <ul class="file-list">
+                  {% for post in tagGroup.posts %}
+                    <li class="file-item">
+                      <a href="{{ post.url | url }}">📄 {{ post.data.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </details>
             {% endfor %}
           {% else %}
-            <li>dev</li>
+            <p style="color: var(--muted); font-size: 0.85rem;">No posts yet</p>
           {% endif %}
-        </ul>
+        </div>
       </aside>
       <div class="vscode-editor">
-        {{ content | safe }}
+        {% if title and page.url != "/dev/" %}
+        {# Individual post view - show metadata first #}
+        <div class="post-header">
+          <h1 class="post-title">{{ title }}</h1>
+          {% if description %}
+          <p class="post-description">{{ description }}</p>
+          {% endif %}
+          {% if backgroundImage %}
+          <div class="post-image">
+            <img src="{{ backgroundImage | url }}" alt="{{ title }}">
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="post-content">
+          {{ content | safe }}
+        </div>
       </div>
     </div>
   </div>

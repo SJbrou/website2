@@ -7,10 +7,14 @@ title: "Links"
   <li class="hn-item">
     <div class="hn-rank">{{ loop.index }}.</div>
     <div class="hn-content">
-      <a class="hn-link" href="{{ post.data.link }}">{{ post.data.title }}</a>
+      <a class="hn-link" href="{{ post.data.link }}" target="_blank" rel="noopener">{{ post.data.title }}</a>
+      <span class="hn-domain">({{ post.data.link | replace("https://", "") | replace("http://", "") | replace("www.", "") | truncate(40) }})</span>
       <div class="hn-sub">
         <span>{{ post.date | readableDate }}</span>
+        <span class="hn-separator">|</span>
+        <a href="{{ post.url | url }}" class="hn-comments">discuss</a>
         {% if post.data.tags %}
+        <span class="hn-separator">|</span>
         <span class="hn-tags">
           {% for tag in post.data.tags %}
           <span class="tag">{{ tag }}</span>
