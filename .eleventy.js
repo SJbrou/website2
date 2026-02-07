@@ -67,6 +67,25 @@ export default function (eleventyConfig) {
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
   });
 
+  eleventyConfig.addFilter("domain", (url) => {
+    if (!url) return "";
+    try {
+      // Remove protocol
+      let domain = url.replace(/^https?:\/\//, "");
+      // Remove www.
+      domain = domain.replace(/^www\./, "");
+      // Remove path (everything after first slash)
+      domain = domain.split('/')[0];
+      // Truncate long domains
+      if (domain.length > 35) {
+        return domain.substring(0, 35) + "...";
+      }
+      return domain;
+    } catch (e) {
+      return "";
+    }
+  });
+
   eleventyConfig.addFilter("absoluteUrl", (url) => {
     if (url.startsWith("/")) {
       return url.slice(1);

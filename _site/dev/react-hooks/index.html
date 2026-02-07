@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hello from Dev</title>
-    <meta name="description" content="A multi-window personal site with dev, about, and links sections." />
+    <title>Understanding React Hooks</title>
+    <meta name="description" content="Deep dive into React Hooks and how they revolutionize state management in functional components." />
     <link rel="stylesheet" href="/website2/assets/css/site.css" />
     <link rel="alternate" type="application/rss+xml" title="Dev Feed" href="/website2/feeds/dev.xml" />
     <link rel="alternate" type="application/rss+xml" title="About Feed" href="/website2/feeds/about.xml" />
@@ -27,7 +27,7 @@
       <span class="dot dot-yellow"></span>
       <span class="dot dot-green"></span>
     </div>
-    <div class="window-title">Hello from Dev</div>
+    <div class="window-title">Understanding React Hooks</div>
     <div class="window-meta">VS Code</div>
   </header>
   <div class="window-body">
@@ -142,13 +142,55 @@
         
         
         <div class="post-header">
-          <h1 class="post-title">Hello from Dev</h1>
+          <h1 class="post-title">Understanding React Hooks</h1>
+          
+          <p class="post-description">Deep dive into React Hooks and how they revolutionize state management in functional components.</p>
           
           
         </div>
         
         <div class="post-content">
-          <p>Initial dev post. Use this space for project notes or work logs.</p>
+          <h2>What are Hooks?</h2>
+<p>React Hooks are functions that let you &quot;hook into&quot; React state and lifecycle features from function components.</p>
+<h2>useState Hook</h2>
+<p>The most commonly used hook is <code>useState</code>:</p>
+<pre><code class="language-javascript">import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        Increment
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>useEffect Hook</h2>
+<p>The <code>useEffect</code> hook handles side effects:</p>
+<pre><code class="language-javascript">useEffect(() =&gt; {
+  document.title = `Count: ${count}`;
+}, [count]);
+</code></pre>
+<h2>Custom Hooks</h2>
+<p>You can create your own hooks to reuse stateful logic:</p>
+<pre><code class="language-javascript">function useLocalStorage(key, initialValue) {
+  const [value, setValue] = useState(() =&gt; {
+    const stored = localStorage.getItem(key);
+    return stored ? JSON.parse(stored) : initialValue;
+  });
+  
+  useEffect(() =&gt; {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+  
+  return [value, setValue];
+}
+</code></pre>
+<p>Hooks make React code more reusable and easier to understand.</p>
 
         </div>
       </div>

@@ -20,7 +20,32 @@ bodyClass: theme-hn
         <span class="hn-subtitle">personal links</span>
       </div>
       <div class="hn-list">
+        {% if page.url != "/links/" %}
+        {# Individual link discussion page #}
+        <div class="hn-discussion">
+          <div class="hn-discussion-header">
+            <h1 class="hn-discussion-title">
+              <a href="{{ link }}" target="_blank" rel="noopener">{{ title }}</a>
+            </h1>
+            {% if summary %}
+            <p class="hn-discussion-summary">{{ summary }}</p>
+            {% endif %}
+            <div class="hn-discussion-meta">
+              <span>{{ page.date | readableDate }}</span>
+              <span class="hn-separator">|</span>
+              <a href="{{ link }}" target="_blank" rel="noopener" class="hn-external">visit link →</a>
+              <span class="hn-separator">|</span>
+              <a href="{{ '/links/' | url }}" class="hn-back">← back to links</a>
+            </div>
+          </div>
+          <div class="hn-discussion-content">
+            {{ content | safe }}
+          </div>
+        </div>
+        {% else %}
+        {# List view #}
         {{ content | safe }}
+        {% endif %}
       </div>
     </div>
   </div>

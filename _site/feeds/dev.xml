@@ -19,5 +19,19 @@
       <guid>https://sjbrou.github.io/website2/dev/hello-world/</guid>
     </item>
     
+    <item>
+      <title>Understanding React Hooks</title>
+      <link>https://sjbrou.github.io/website2/dev/react-hooks/</link>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 GMT</pubDate>
+      <guid>https://sjbrou.github.io/website2/dev/react-hooks/</guid>
+    </item>
+    
+    <item>
+      <title>Building REST APIs with Express</title>
+      <link>https://sjbrou.github.io/website2/dev/building-apis/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 GMT</pubDate>
+      <guid>https://sjbrou.github.io/website2/dev/building-apis/</guid>
+    </item>
+    
   </channel>
 </rss>

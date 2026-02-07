@@ -21,8 +21,8 @@
     </header>
     <main class="site-main">
       <section class="window-grid">
-  <!-- Dev Section Preview -->
-  <div class="app-window window-card" style="--accent: #4fc3f7;">
+  <!-- Dev Section Preview (VS Code style) -->
+  <div class="app-window window-card window-vscode" style="--accent: #4fc3f7;">
     <header class="window-bar">
       <div class="window-dots">
         <span class="dot dot-red"></span>
@@ -32,19 +32,77 @@
       <div class="window-title">Dev</div>
       <div class="window-meta">VS Code</div>
     </header>
-    <div class="window-body window-preview">
-      <div class="preview-content">
-        <h3>Latest Dev Posts</h3>
-        <ul class="preview-list">
+    <div class="window-body" style="padding: 0;">
+      <div class="vscode-shell" style="font-size: 0.85rem;">
+        <aside class="vscode-sidebar" style="padding: 12px;">
+          <div class="sidebar-title">Folders</div>
+          <ul class="sidebar-list">
+            
+            
+              
+                <li>📁 Api</li>
+                
+              
+            
+              
+                <li>📁 Javascript</li>
+                
+              
+            
+              
+                <li>📁 Log</li>
+                
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          </ul>
+        </aside>
+        <div class="vscode-editor" style="padding: 12px;">
+          <div style="margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif;">
+            <strong>Recent Posts</strong>
+          </div>
           
-        </ul>
+          
+            
+              <div style="margin-bottom: 8px;">
+                <a href="/website2/dev/scraping-vu/" style="color: var(--accent); text-decoration: none; font-size: 0.85rem;">Play with strudel</a>
+              </div>
+              
+            
+          
+            
+              <div style="margin-bottom: 8px;">
+                <a href="/website2/dev/hello-world/" style="color: var(--accent); text-decoration: none; font-size: 0.85rem;">Hello from Dev</a>
+              </div>
+              
+            
+          
+            
+              <div style="margin-bottom: 8px;">
+                <a href="/website2/dev/react-hooks/" style="color: var(--accent); text-decoration: none; font-size: 0.85rem;">Understanding React Hooks</a>
+              </div>
+              
+            
+          
+            
+          
+          <div style="margin-top: 12px;">
+            <a class="window-link" href="/website2/dev/" style="font-size: 0.8rem; padding: 6px 10px;">View All →</a>
+          </div>
+        </div>
       </div>
-      <a class="window-link" href="/website2/dev/">Open Dev →</a>
     </div>
   </div>
 
-  <!-- About Section Preview -->
-  <div class="app-window window-card" style="--accent: #bda27e;">
+  <!-- About Section Preview (Wikipedia style) -->
+  <div class="app-window window-card window-wikipedia" style="--accent: #bda27e; background: #f8f9fa;">
     <header class="window-bar">
       <div class="window-dots">
         <span class="dot dot-red"></span>
@@ -54,22 +112,26 @@
       <div class="window-title">About</div>
       <div class="window-meta">Wikipedia</div>
     </header>
-    <div class="window-body window-preview">
-      <div class="preview-content">
-        <h3>Stan Brouwer</h3>
-        <p>Multi-disciplinary builder and designer focused on creating thoughtful digital experiences.</p>
-        <div class="preview-tags">
-          <span class="tag">Product</span>
-          <span class="tag">Design</span>
-          <span class="tag">Web</span>
-        </div>
+    <div class="window-body" style="padding: 0; background: #fff;">
+      <div class="wiki-shell" style="font-size: 0.85rem;">
+        <aside class="wiki-sidebar" style="padding: 12px;">
+          <div class="wiki-logo" style="font-size: 1.5rem; margin-bottom: 12px;">W</div>
+          <div class="wiki-toc-title" style="font-size: 0.8rem;">Contents</div>
+        </aside>
+        <article class="wiki-article" style="padding: 12px 16px;">
+          <h1 style="font-size: 1.2rem; margin: 0 0 4px 0; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px;">Stan Brouwer</h1>
+          <p class="wiki-subtitle" style="font-size: 0.75rem; margin: 0 0 12px 0;">From Wikipedia, the free encyclopedia</p>
+          <p style="font-size: 0.8rem; margin: 0 0 12px 0; line-height: 1.4;">Multi-disciplinary builder and designer focused on creating thoughtful digital experiences.</p>
+          <div style="margin-top: 12px;">
+            <a class="window-link" href="/website2/about/" style="font-size: 0.8rem; padding: 6px 10px; background: #8b6f47;">Read More →</a>
+          </div>
+        </article>
       </div>
-      <a class="window-link" href="/website2/about/">Open About →</a>
     </div>
   </div>
 
-  <!-- Links Section Preview -->
-  <div class="app-window window-card" style="--accent: #ff7e3d;">
+  <!-- Links Section Preview (Hacker News style) -->
+  <div class="app-window window-card window-hn" style="--accent: #ff7e3d; background: #ffefe6;">
     <header class="window-bar">
       <div class="window-dots">
         <span class="dot dot-red"></span>
@@ -79,14 +141,43 @@
       <div class="window-title">Links</div>
       <div class="window-meta">Hacker News</div>
     </header>
-    <div class="window-body window-preview">
-      <div class="preview-content">
-        <h3>Curated Links</h3>
-        <ul class="preview-list">
-          
-        </ul>
+    <div class="window-body" style="padding: 0;">
+      <div class="hn-shell">
+        <div class="hn-header" style="padding: 8px 12px; font-size: 0.85rem;">
+          <span class="hn-logo" style="padding: 2px 6px; font-size: 0.9rem;">Y</span>
+          <span class="hn-title">Hacker News</span>
+          <span class="hn-subtitle" style="font-size: 0.75rem;">personal links</span>
+        </div>
+        <div class="hn-list" style="padding: 12px;">
+          <ul class="hn-items" style="padding: 0;">
+            
+            
+              
+                <li class="hn-item" style="grid-template-columns: 30px 1fr; gap: 8px; padding: 8px 0; font-size: 0.8rem;">
+                  <div class="hn-rank">1.</div>
+                  <div class="hn-content">
+                    <a class="hn-link" href="https://www.whileforloop.com/en/" style="font-size: 0.85rem;">While for Loop</a>
+                  </div>
+                </li>
+                
+              
+            
+              
+                <li class="hn-item" style="grid-template-columns: 30px 1fr; gap: 8px; padding: 8px 0; font-size: 0.8rem;">
+                  <div class="hn-rank">2.</div>
+                  <div class="hn-content">
+                    <a class="hn-link" href="https://www.11ty.dev/" style="font-size: 0.85rem;">Eleventy: A Simpler Static Site Generator</a>
+                  </div>
+                </li>
+                
+              
+            
+          </ul>
+          <div style="margin-top: 12px; padding-left: 30px;">
+            <a class="window-link" href="/website2/links/" style="font-size: 0.8rem; padding: 6px 10px;">View All →</a>
+          </div>
+        </div>
       </div>
-      <a class="window-link" href="/website2/links/">Open Links →</a>
     </div>
   </div>
 </section>
