@@ -19,7 +19,7 @@ bodyClass: theme-vscode
         <div class="folder-tree">
           {% if collections.devByTag %}
             {% for tagGroup in collections.devByTag %}
-              <details class="folder" open>
+              <details class="folder">
                 <summary class="folder-name">
                   <span class="folder-icon">📁</span>
                   <span>{{ tagGroup.tag | capitalize }}</span>

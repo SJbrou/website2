@@ -8,7 +8,7 @@ title: "Links"
     <div class="hn-rank">{{ loop.index }}.</div>
     <div class="hn-content">
       <a class="hn-link" href="{{ post.data.link }}" target="_blank" rel="noopener">{{ post.data.title }}</a>
-      <span class="hn-domain">({{ post.data.link | replace("https://", "") | replace("http://", "") | replace("www.", "") | truncate(40) }})</span>
+      <span class="hn-domain">({{ post.data.link | domain }})</span>
       <div class="hn-sub">
         <span>{{ post.date | readableDate }}</span>
         <span class="hn-separator">|</span>
