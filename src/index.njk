@@ -19,8 +19,12 @@ title: "Home"
         <aside class="vscode-sidebar" style="padding: 12px;">
           <div class="sidebar-title">Folders</div>
           <ul class="sidebar-list">
-            {% for tagGroup in collections.devByTag | slice(0, 3) %}
-            <li>📁 {{ tagGroup.tag | capitalize }}</li>
+            {% set tagCount = 0 %}
+            {% for tagGroup in collections.devByTag %}
+              {% if tagCount < 3 %}
+                <li>📁 {{ tagGroup.tag | capitalize }}</li>
+                {% set tagCount = tagCount + 1 %}
+              {% endif %}
             {% endfor %}
           </ul>
         </aside>
@@ -28,10 +32,14 @@ title: "Home"
           <div style="margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif;">
             <strong>Recent Posts</strong>
           </div>
-          {% for post in collections.dev | slice(0, 3) %}
-          <div style="margin-bottom: 8px;">
-            <a href="{{ post.url | url }}" style="color: var(--accent); text-decoration: none; font-size: 0.85rem;">{{ post.data.title }}</a>
-          </div>
+          {% set postCount = 0 %}
+          {% for post in collections.dev %}
+            {% if postCount < 3 %}
+              <div style="margin-bottom: 8px;">
+                <a href="{{ post.url | url }}" style="color: var(--accent); text-decoration: none; font-size: 0.85rem;">{{ post.data.title }}</a>
+              </div>
+              {% set postCount = postCount + 1 %}
+            {% endif %}
           {% endfor %}
           <div style="margin-top: 12px;">
             <a class="window-link" href="{{ '/dev/' | url }}" style="font-size: 0.8rem; padding: 6px 10px;">View All →</a>
@@ -90,13 +98,17 @@ title: "Home"
         </div>
         <div class="hn-list" style="padding: 12px;">
           <ul class="hn-items" style="padding: 0;">
-            {% for post in collections.links | slice(0, 3) %}
-            <li class="hn-item" style="grid-template-columns: 30px 1fr; gap: 8px; padding: 8px 0; font-size: 0.8rem;">
-              <div class="hn-rank">{{ loop.index }}.</div>
-              <div class="hn-content">
-                <a class="hn-link" href="{{ post.data.link }}" style="font-size: 0.85rem;">{{ post.data.title }}</a>
-              </div>
-            </li>
+            {% set linkCount = 0 %}
+            {% for post in collections.links %}
+              {% if linkCount < 3 %}
+                <li class="hn-item" style="grid-template-columns: 30px 1fr; gap: 8px; padding: 8px 0; font-size: 0.8rem;">
+                  <div class="hn-rank">{{ loop.index }}.</div>
+                  <div class="hn-content">
+                    <a class="hn-link" href="{{ post.data.link }}" style="font-size: 0.85rem;">{{ post.data.title }}</a>
+                  </div>
+                </li>
+                {% set linkCount = linkCount + 1 %}
+              {% endif %}
             {% endfor %}
           </ul>
           <div style="margin-top: 12px; padding-left: 30px;">

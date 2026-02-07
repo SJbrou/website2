@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Play with strudel</title>
-    <meta name="description" content="A multi-window personal site with dev, about, and links sections." />
+    <title>Building REST APIs with Express</title>
+    <meta name="description" content="A comprehensive guide to building scalable REST APIs using Node.js and Express framework." />
     <link rel="stylesheet" href="/website2/assets/css/site.css" />
     <link rel="alternate" type="application/rss+xml" title="Dev Feed" href="/website2/feeds/dev.xml" />
     <link rel="alternate" type="application/rss+xml" title="About Feed" href="/website2/feeds/about.xml" />
@@ -27,7 +27,7 @@
       <span class="dot dot-yellow"></span>
       <span class="dot dot-green"></span>
     </div>
-    <div class="window-title">Play with strudel</div>
+    <div class="window-title">Building REST APIs with Express</div>
     <div class="window-meta">VS Code</div>
   </header>
   <div class="window-body">
@@ -142,27 +142,47 @@
         
         
         <div class="post-header">
-          <h1 class="post-title">Play with strudel</h1>
+          <h1 class="post-title">Building REST APIs with Express</h1>
           
+          <p class="post-description">A comprehensive guide to building scalable REST APIs using Node.js and Express framework.</p>
+          
+          
+          <div class="post-image">
+            <img src="/website2/assets/img/api-background.jpg" alt="Building REST APIs with Express">
+          </div>
           
         </div>
         
         <div class="post-content">
-          <p>Inspired by <a href="https://www.youtube.com/@Switch-Angel">Switch Angel</a>, I've been playing arround with <a href="https://strudel-lang.org/">Strudel</a> and was impressed by how easy it is to create music in the browser.</p>
-<script src="https://unpkg.com/@strudel/embed@latest"></script>
-<strudel-repl>
-  <!--
-setCpm(10/4)
-$: note(`e e f g g f e d c c d e [e -] [- d] d@2
-         e e f g g f e d c c d e [d -] [- c] c@2
-         d d e c d [e f] e c d [e f] e d c d g2 [- e]
-         - e f g g f e d c c d e d [- c] c -
-         - - - - - - - - - - - - - - - - -
-`).sound("piano")._punchcard()
--->
-</strudel-repl>
-<p>Inspiration:</p>
-<iframe width="50%" height="30%" src="https://www.youtube.com/embed/iu5rnQkfO6M" title="Coding Trance Music from Scratch (Again )" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <h2>Introduction</h2>
+<p>REST APIs are the backbone of modern web applications. In this guide, we'll explore how to build robust and scalable APIs using Express.js.</p>
+<h2>Setting Up Express</h2>
+<p>First, install Express in your project:</p>
+<pre><code class="language-bash">npm install express
+</code></pre>
+<p>Then create a simple server:</p>
+<pre><code class="language-javascript">const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+app.get('/api/users', (req, res) =&gt; {
+  res.json({ users: [] });
+});
+
+app.listen(3000, () =&gt; {
+  console.log('Server running on port 3000');
+});
+</code></pre>
+<h2>Best Practices</h2>
+<ol>
+<li><strong>Use middleware</strong> for common tasks like authentication</li>
+<li><strong>Validate input</strong> to prevent security issues</li>
+<li><strong>Handle errors</strong> gracefully with proper HTTP status codes</li>
+<li><strong>Document your API</strong> using tools like Swagger</li>
+</ol>
+<h2>Conclusion</h2>
+<p>Building APIs with Express is straightforward once you understand the fundamentals. Focus on creating clean, maintainable code that follows REST principles.</p>
 
         </div>
       </div>

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Play with strudel</title>
-    <meta name="description" content="A multi-window personal site with dev, about, and links sections." />
+    <title>Understanding React Hooks</title>
+    <meta name="description" content="Deep dive into React Hooks and how they revolutionize state management in functional components." />
     <link rel="stylesheet" href="/website2/assets/css/site.css" />
     <link rel="alternate" type="application/rss+xml" title="Dev Feed" href="/website2/feeds/dev.xml" />
     <link rel="alternate" type="application/rss+xml" title="About Feed" href="/website2/feeds/about.xml" />
@@ -27,7 +27,7 @@
       <span class="dot dot-yellow"></span>
       <span class="dot dot-green"></span>
     </div>
-    <div class="window-title">Play with strudel</div>
+    <div class="window-title">Understanding React Hooks</div>
     <div class="window-meta">VS Code</div>
   </header>
   <div class="window-body">
@@ -142,27 +142,55 @@
         
         
         <div class="post-header">
-          <h1 class="post-title">Play with strudel</h1>
+          <h1 class="post-title">Understanding React Hooks</h1>
+          
+          <p class="post-description">Deep dive into React Hooks and how they revolutionize state management in functional components.</p>
           
           
         </div>
         
         <div class="post-content">
-          <p>Inspired by <a href="https://www.youtube.com/@Switch-Angel">Switch Angel</a>, I've been playing arround with <a href="https://strudel-lang.org/">Strudel</a> and was impressed by how easy it is to create music in the browser.</p>
-<script src="https://unpkg.com/@strudel/embed@latest"></script>
-<strudel-repl>
-  <!--
-setCpm(10/4)
-$: note(`e e f g g f e d c c d e [e -] [- d] d@2
-         e e f g g f e d c c d e [d -] [- c] c@2
-         d d e c d [e f] e c d [e f] e d c d g2 [- e]
-         - e f g g f e d c c d e d [- c] c -
-         - - - - - - - - - - - - - - - - -
-`).sound("piano")._punchcard()
--->
-</strudel-repl>
-<p>Inspiration:</p>
-<iframe width="50%" height="30%" src="https://www.youtube.com/embed/iu5rnQkfO6M" title="Coding Trance Music from Scratch (Again )" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <h2>What are Hooks?</h2>
+<p>React Hooks are functions that let you &quot;hook into&quot; React state and lifecycle features from function components.</p>
+<h2>useState Hook</h2>
+<p>The most commonly used hook is <code>useState</code>:</p>
+<pre><code class="language-javascript">import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        Increment
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>useEffect Hook</h2>
+<p>The <code>useEffect</code> hook handles side effects:</p>
+<pre><code class="language-javascript">useEffect(() =&gt; {
+  document.title = `Count: ${count}`;
+}, [count]);
+</code></pre>
+<h2>Custom Hooks</h2>
+<p>You can create your own hooks to reuse stateful logic:</p>
+<pre><code class="language-javascript">function useLocalStorage(key, initialValue) {
+  const [value, setValue] = useState(() =&gt; {
+    const stored = localStorage.getItem(key);
+    return stored ? JSON.parse(stored) : initialValue;
+  });
+  
+  useEffect(() =&gt; {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+  
+  return [value, setValue];
+}
+</code></pre>
+<p>Hooks make React code more reusable and easier to understand.</p>
 
         </div>
       </div>
